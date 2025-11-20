@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>堂吉诃德·角色助手</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">堂吉诃德</div>
+      <nav class="nav">
+        <div class="nav-item active">新对话</div>
+        <div class="nav-item">历史</div>
+        <div class="nav-item">设置</div>
+      </nav>
+      <div class="sidebar-footer">v1.0</div>
+    </aside>
+    <main class="main">
+      <header class="header">
+        <div class="greeting">你好！ Don Quixote</div>
+        <div class="actions">
+          <button id="btnSystem" class="btn">系统提示词</button>
+          <button id="btnBg" class="btn">聊天背景</button>
+          <input id="bgFile" type="file" accept="image/*" style="display:none" />
+        </div>
+      </header>
+      <section id="chat" class="chat"></section>
+      <section class="composer">
+        <div class="composer-card">
+          <textarea id="input" placeholder="按下输入，/ 选择快捷指令"></textarea>
+          <div class="composer-tools">
+            <button id="btnSend" class="btn primary">发送</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="modalSystem" class="modal hidden">
+    <div class="modal-content">
+      <h3>系统提示词</h3>
+      <textarea id="systemPrompt" rows="6" placeholder="在此输入系统提示词"></textarea>
+      <div class="modal-actions">
+        <button id="saveSystem" class="btn primary">保存</button>
+        <button id="closeSystem" class="btn">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalKey" class="modal hidden">
+    <div class="modal-content">
+      <h3>输入 API Key 以开始</h3>
+      <input id="cfgKey" placeholder="sk-..." />
+      <div class="modal-actions">
+        <button id="saveKey" class="btn primary">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  </body>
+  </html>
